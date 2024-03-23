@@ -3,31 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-bg-light: #e9ffe4; /* light-bg */
+  --color-text-light: #800080; /* light-text */
+  --color-bg-dark: #0a0b5c; /* dark-bg */
+  --color-text-dark: #ffe1fe; /* dark-text */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme="dark"] {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+[data-theme="light"] {
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .bt {
+    @apply flex justify-center items-center hover:bg-light-p dark:hover:bg-dark-s rounded-lg m-2 p-2 text-light-p hover:text-light-s dark:text-dark-p dark:hover:text-light-s transition-colors duration-150;
+  }
+  .btc {
+    @apply text-light-p hover:text-light-s dark:text-dark-s dark:hover:text-dark-p transition-colors duration-150 w-[80%] h-[80%];
   }
 }
+.full {
+    @apply w-full h-full;
+  }
+
+

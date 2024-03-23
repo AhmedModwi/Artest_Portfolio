@@ -1,13 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    
   ],
   theme: {
     extend: {
       colors: {
+        'light-bg': '#9eff90',
+        'light-text': '#800080', // Updated to match your initial opurple-900 color
+        'light-p': '#ff5757',
+        'light-s': '#85a8ff',
+        'dark-bg': '#211951', // Updated to match your initial oblue-950 color
+        'dark-text': '#ffe1fe',
+        'dark-p': '#29fe1d',
+        'dark-s': '#ff5757',
       oblue: {
         DEFAULT: '#0000FF',
         '50': '#e8f1ff',
@@ -68,4 +78,5 @@ module.exports = {
     },
   },
   plugins: [],
+  
 };
